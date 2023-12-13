@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    // Get user input for the maximum number
+    int n;
+    printf("Enter the maximum number (n): ");
+    scanf("%d", &n);
+
+    // Print palindrome numbers up to the nth number
+    printf("Palindrome numbers up to %d:\n", n);
+
+    for (int i = 0; i <= n; ++i) {
+        int originalNumber = i;
+        int reversedNumber = 0;
+        int temp = i;
+
+        while (temp > 0) {
+            reversedNumber = reversedNumber * 10 + temp % 10;
+            temp /= 10;
+        }
+
+        if (originalNumber == reversedNumber) {
+            printf("%d\n", i);
+        }
+    }
+
+    return 0;
+}
